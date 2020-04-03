@@ -1,12 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles\w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/main.css" type="text/css">
+    <link rel="stylesheet" href="styles\main.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,700" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
     <body>
+
+      <!-- Navbar -->
+     <div class="w3-top">
+       <div class="w3-bar w3-white w3-card">
+         <a class="w3-clear:before w3-clear:after w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+         <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+         <a href="#gallery" class="w3-bar-item w3-button w3-padding-large">WORK SAMPLES</a>
+         <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-padding-large w3-button" title="More">CONTACT <i class="fa fa-caret-down"></i></button>
+           <div class="w3-dropdown-content w3-bar-block w3-card-4">
+             <a href="#contact" class="w3-bar-item w3-button">INFO</a>
+             <a href="#" class="w3-bar-item w3-button" data-toggle="modal" data-target="#message-modal">MESSAGE ME</a>
+           </div>
+         </div>
+
+      <!-- Trigger the message modal -->
+       <div class="message-button">
+        <button type="button" class="w3-padding-large w3-hover-green w3-hide-small w3-right message-button" data-toggle="modal" data-target="#message-modal">MESSAGE ME</button>
+       </div>
+      </div>
+     </div>
+
+       <!-- Trigger the modal with a button -->
+
+       <!-- Message Modal -->
+       <div id="message-modal" class="modal fade" role='dialog'>
+           <div class="fixed-div modal-backdrop modal-backdrop.in">
+         <div class="modal-dialog">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+             <div class="modal-header">
+               <h4 style="color:black;font-size:24px;">I'd love to hear from you!</h4>
+               <button type="button" class="close" data-dismiss="modal"><span style="font-size:30px;" aria-hidden="true">&times;</span></button>
+
+             </div>
+             <div class="modal-body">
+               <form id="message-form" role="form">
+                 <div class="form-group">
+                   <label for="usrname" style="color:black;font-size:20px;"><span class="glyphicon glyphicon-envelope"></span></label>
+                   <input type="email" class="form-control" id="email_address" placeholder="Email Address *" required>
+                 </div>
+                 <div class="form-group">
+                   <label for="phoneNum" style="color:black;font-size:20px;"><span class="glyphicon glyphicon-phone"></span></label>
+                   <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                 </div>
+                 <div class="form-group">
+                   <label for="message" style="color:black;font-size:20px;"><span class="glyphicon glyphicon-pencil"></span></label>
+                   <textarea type="text" class="md-textarea form-control" id="msg" rows="7" placeholder="Message"></textarea>
+                 </div>
+
+                <div class="modal-footer d-flex justify-content-center" style="padding: 20px;">
+                 <button id="send-button" type="submit" class="btn btn-unique btn-success btn-block modal-trigger fa fa-paper-plane"></span> SEND</button>
+                </div>
+               </form>
+            </div>
+           </div>
+         </div>
+     </div>
+       </div>
+
+       <!-- Registration Modal
+       <div id="reg-modal" class="modal fade" role="dialog">
+         <div class="modal-dialog">
+    -->
+
+           <!-- Modal content-
+           <div class="modal-content">
+             <div class="modal-header">
+               <h4 style="color:black;"><span class="glyphicon glyphicon-lock"></span>Register</h4>
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+             </div>
+             <div class="modal-body">
+               <form id="reg-form" role="form">
+                 <div class="form-group">
+                   <label for="usrname"><span class="glyphicon glyphicon-user"></span> First Name</label>
+                   <input type="text" class="form-control" id="fname" required placeholder="Enter first name">
+                 </div>
+                 <div class="form-group">
+                   <label for="usrname"><span class="glyphicon glyphicon-user"></span> Last name</label>
+                   <input type="text" class="form-control" id="lname" required placeholder="Enter last name">
+                 </div>
+                 <div class="form-group">
+                   <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
+                   <input type="email" class="form-control" id="reg_email" required placeholder="Enter email address">
+                 </div>
+                 <div class="form-group">
+                   <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                   <input type="password" class="form-control" id="reg_psw" required placeholder="Enter password">
+                 </div>
+                 <button type="submit" class="btn btn-default btn-success btn-block modal-trigger"><span class="glyphicon glyphicon-off"></span> Register</button>
+               </form>
+             </div>
+             <div class="modal-footer">
+               <p class="message">Already have an account? <a href="#login-modal" data-toggle="modal" data-dismiss="modal" style="cursor: pointer;"> <u>Sign In</u></a></p>
+             </div>
+           </div>
+         </div>
+       </div> -->
 
       <div id="intro" class="container-fluid hero landscape">
         <h1>Adam Gemperline</h1>
@@ -16,88 +128,170 @@
         </a>
       </div>
 
-      <div id="about" class="container hero">
-        <h2>About Me</h2>
-      </div>
+      <div id="about" class="container-fluid hero">
+        <h2>About</h2>
         <div class="row">
           <div class="col-md-6 left-col">
-            <h2> I'm<br>currently completing my last few courses towards a Computer Science degree with an emphasis in Software Engineering at California State University, Fullerton</h2>
+            <h2> I'm a<br> forward-thinking, innovative techie who likes to create technology<br>that strengthens social interaction and promotes human development.</h2>
           </div>
           <div class="col-md-6 right-col">
-            <h5>I was born in <a href='https://www.google.com/maps/place/Cape+Town,+South+Africa' target='_blank'>Dayton, Ohio</a> and moved around a lot as a kid. To keep me distracted, my parents gave me a camera. Since then, I look at the world through a lens. I've visited over 30 countries and taken almost one quarter of a million photographs, and I feel like I'm just getting started. From landscapes to personal portraits and exciting scenes, I love being able to capture a moment and share it with others. Join me on my journey!</h5>
+            <h5>I was born <br>in <a href='https://www.google.com/maps/place/Dayton,+OH/@39.8112442,-84.3422415,11z/data=!3m1!4b1!4m5!3m4!1s0x884080d5aedd1403:0xa640e392f20e4ce4!8m2!3d39.7589478!4d-84.1916069' target='_blank'>Dayton, Ohio</a> <br>and moved to the <br>west coast when I was <br>in my early twenties. I have <br>a passion for developing innovative <br>technology that empowers people <br>to connect with one another and improve their level of efficiency. In my free time, I enjoy camping, stargazing, attending music events, traveling the world, pressing buttons, and meeting new people.
           </div>
         </div>
+      </div>
+
+      <div id="spacer" class="container-flui">
+        <div class="row">
+          <div class="col-md-6 left-col">
+          </div>
+          <div class="col-md-6 right-col">
+          </div>
+        </div>
+      </div>
 
       <div id="gallery" class="container-fluid hero">
-        <h2>Gallery</h2>
-
+        <h2>Work Samples</h2>
         <div class="row">
-          <div class="flip-card">
-            <a href="https://www.mssqltips.com/sqlservertip/5242/adding-users-to-azure-sql-databases/" target="_blank">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="img\gallery\scriptMan.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
-              <div class="flip-card-back">
-                <img src="img\gallery\scriptManCode.JPG" alt="Photo1" link="https://www.mssqltips.com/sqlservertip/5242/adding-users-to-azure-sql-databases/" style="max-width:100%; max-height:100%;"></div>
-                <h1>Back Title</h1>
-                <p>Here's a paragraph</p>
+          <div class="col-md-4">
+            <div class="flip-card">
+              <a href="https://github.com/gemperline/DatabaseManagementTool/tree/master/ScriptManagerV4" target="_blank">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="scriptMan.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                  <div class="flip-card-back">
+                    <img src="scriptManCode.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                </div>
+              </a>
             </div>
-          </a>
           </div>
-        </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="img/gallery/photo1.jpg" alt="Photo1" style="width:300px;height:300px;"></div>
-            <div class="flip-card-back">
-              <h1>Back Title</h1>
-              <p>Here's a paragraph</p>
+
+          <div class="col-md-4">
+            <div class="flip-card">
+              <a href="https://github.com/gemperline/DatabaseManagementTool/tree/master/ScriptManagerV4" target="_blank">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="scriptMan.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                  <div class="flip-card-back">
+                    <img src="scriptManCode.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="img/gallery/photo1.jpg" alt="Photo1" style="width:300px;height:300px;"></div>
-          <div class="flip-card-back">
-            <h1>Back Title</h1>
-            <p>Here's a paragraph</p>
-        </div>
-      </div>
-    </div>
+
+          <div class="col-md-4">
+            <div class="flip-card">
+              <a href="https://github.com/gemperline/DatabaseManagementTool/tree/master/ScriptManagerV4" target="_blank">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="scriptMan.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                  <div class="flip-card-back">
+                    <img src="scriptManCode.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="row">
-          <div class="col-md-4"><img src="img/gallery/gallery-04.jpg"></div>
-          <div class="col-md-4"><img src="img/gallery/gallery-05.jpg"></div>
-          <div class="col-md-4"><img src="img/gallery/gallery-06.jpg"></div>
+          <div class="col-md-4">
+            <div class="flip-card">
+              <a href="https://github.com/gemperline/DatabaseManagementTool/tree/master/ScriptManagerV4" target="_blank">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="scriptMan.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                  <div class="flip-card-back">
+                    <img src="scriptManCode.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="flip-card">
+              <a href="https://github.com/gemperline/DatabaseManagementTool/tree/master/ScriptManagerV4" target="_blank">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="scriptMan.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                  <div class="flip-card-back">
+                    <img src="scriptManCode.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="flip-card">
+              <a href="https://github.com/gemperline/DatabaseManagementTool/tree/master/ScriptManagerV4" target="_blank">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="scriptMan.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                  <div class="flip-card-back">
+                    <img src="scriptManCode.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="row">
-          <div class="col-md-4"><img src="img/gallery/gallery-07.jpg"></div>
-          <div class="col-md-4"><img src="img/gallery/gallery-08.jpg"></div>
-          <div class="col-md-4"><img src="img/gallery/gallery-09.jpg"></div>
+          <div class="col-md-4">
+            <div class="flip-card">
+              <a href="https://github.com/gemperline/DatabaseManagementTool/tree/master/ScriptManagerV4" target="_blank">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="gallery-04.jpg" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                  <div class="flip-card-back">
+                    <img src="scriptManCode.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="flip-card">
+              <a href="https://github.com/gemperline/DatabaseManagementTool/tree/master/ScriptManagerV4" target="_blank">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="gallery-05.jpg" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                  <div class="flip-card-back">
+                    <img src="scriptManCode.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="flip-card">
+              <a href="https://github.com/gemperline/DatabaseManagementTool/tree/master/ScriptManagerV4" target="_blank">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="gallery-06.jpg" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                  <div class="flip-card-back">
+                    <img src="scriptManCode.JPG" alt="Photo1" style="max-width:100%; max-height:100%;"></div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="container-fluid hero bridge"><img src="img/gallery/full-width.jpg">
-      </div>
-
-      <div id="contact" class="container-fluid hero contact">
+      <div id="contact" class="container-fluid hero contact"><img src="img/gallery/palms.jpg" style="width:100%;">
         <h2>Contact Me</h2>
-        <p>I'm available for freelance &ndash; from events like weddings to documenting your next adventure, let's chat!</p>
-          <a href="mailto:mail@example.net"><button type="button" class="cta">Contact</button></a>
-          <div id="social">
-            <a href="http://www.twitter.com"><img src="img/icons/twitter.svg"></a>
-            <a href="http://www.instagram.com"><img src="img/icons/instagram.svg"></a>
-            <a href="http://www.medium.com"><img src="img/icons/medium.svg"></a>
-          </div>
+        <p>I'm interseted in learing about new opportunities &ndash; from software development to web design, let's chat!</p>
+          <a href="mailto:adamgemperline@gmail.com"><button type="button" class="cta">Contact</button></a>
+
+        <div id="social">
+          <a href="https://www.linkedin.com/in/gemperline/" target="_blank">
+            <!--<div class="tooltip"><img src="img/icons/linkedin-black.svg" visibility="visible"><span class="tooltiptext">GitHub</span></div></a>  -->
+          <a href="https://www.linkedin.com/in/gemperline/" target="_blank"><img src="img/icons/linkedin.svg" title="LinkedIn"></a>
+          <a href="https://github.com/gemperline" target="_blank"><img src="img/icons/github-11-64.ico" title="GitHub"></a>
+        </div>
       </div>
 
       <div id="footer">
-        <div class="footer-item">
+        <div class="footer-item" style="padding-right:30px;">
           <h4>
-            <b>Zack <br> Klein</b>
+            <b>Adam G</b>
           </h4>
         </div>
 
@@ -113,9 +307,9 @@
           <a href="#contact">Contact</a>
         </div>
 
-        <div class="copyright"><span>&copy; Zach Klein</span></div>
+        <div class="copyright"><span>&copy; Adam Gemperline</span></div>
 
       </div>
-
+      <script src="modal.js"></script>
     </body>
 </html>
