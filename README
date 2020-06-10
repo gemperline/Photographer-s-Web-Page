@@ -1,7 +1,11 @@
 // This is an interactive web page that I created from the ground up which serves as a personal website to provide some project samples
-// and general information. This site is still under construction and considered a work in progress.
+// and general information. This site is still under construction and considered a work in progress. 
+
+// TODO: Implement more flexibility for various devices and screen sizes. Complete message modal functionality. Add additional work samples.
 
 // Utilizes HTML, CSS, SCSS, JavaScript
+
+// www.adamgemperline.com
 
 // Adam Gemperline ®
   
